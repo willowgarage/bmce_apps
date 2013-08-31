@@ -1,0 +1,16 @@
+<package>
+  <description brief="bmce_apps">
+
+     bmce_apps
+
+  </description>
+  <author>David Gossow</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bmce_apps</url>
+  
+  <depend package="joy_cmd"/>
+
+</package>
+
+

@@ -1,0 +1,8 @@
+<launch>
+
+  <node name="joy_say_hello" pkg="joy_cmd" type="joy_cmd" output="screen">
+    <param name="trigger_button" value="0"/>
+    <param name="on_command" value="espeak 'Hello, my name is Robocop.'"/>
+  </node>
+
+</launch>
