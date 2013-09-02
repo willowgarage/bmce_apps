@@ -1,0 +1,1 @@
+espeak -v fr -s 140 "Bonjour, je suis Robocop. J'ai été conçu dans le laboratoire de willow garage en californie. Je suis capable de faire des prouesses pour vous. Voulez-vous etre mon ami?"

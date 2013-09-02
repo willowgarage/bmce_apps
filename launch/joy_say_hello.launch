@@ -2,7 +2,14 @@
 
   <node name="joy_say_hello" pkg="joy_cmd" type="joy_cmd" output="screen">
     <param name="trigger_button" value="0"/>
-    <param name="on_command" value="espeak 'Hello, my name is Robocop. I was born in the laboratry of Willow Garage in California. I was programmed to help you with your duties. Would you like to be my friend?'"/>
+    <param name="on_command" value="espeak -s 140 'Hello, my name is Robocop.  I was born in the laboratry of Willow Garage in California.  I was programmed to help you with your duties.  Would you like to be my friend?'"/>
   </node>
+
+  <node name="joy_dit_bonjour" pkg="joy_cmd" type="joy_cmd" output="screen">
+    <param name="trigger_button" value="3"/>
+    <!-- <param name="on_command" value="espeak -v fr -s 140 'Bonjour, je suis Robocop. J'ai été conçu dans le laboratoire de willow garage en californie. je suis capable de faire des prouesses pour vous. voulez-vous etre mon ami?'"/> -->
+    <param name="on_command" textfile="$(find bmce_apps)/launch/bonjour.txt"/>
+  </node>
+
 
 </launch>
