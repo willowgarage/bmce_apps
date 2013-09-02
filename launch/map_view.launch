@@ -1,0 +1,9 @@
+<launch>
+
+  <node name="map_view_rviz" pkg="rviz" type="rviz"
+    args="-d $(find bmce_apps)/cfg/map_view.rviz" output="screen" />
+
+  <node name="print_pose" pkg="rostopic" type="rostopic"
+    args="echo /pose" output="screen"/>
+
+</launch>
