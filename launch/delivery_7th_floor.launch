@@ -1,7 +1,7 @@
 <launch>
   <!-- main delivery launch -->
   <include file="$(find bmce_apps)/launch/delivery.launch">
-    <param name="data_dir" value="$(find bmce_apps/cfg/7th_floor">
+    <arg name="data_dir" value="$(find bmce_apps)/cfg/7th_floor"/>
   </include>
   
 </launch>
