@@ -7,7 +7,7 @@
 
   <node pkg="map_store" type="map_manager" name="map_manager" output="screen"/>
   
-  <node name="delivery_exec" pkg="pr2_delivery" type="call_deliver">
+  <node name="delivery_exec" pkg="pr2_delivery" type="call_deliver.py">
     <param name="data_dir" value="$(arg data_dir)" />
   </node>
   
