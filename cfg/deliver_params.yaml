@@ -1,0 +1,5 @@
+lang: fr
+request_item_phrase: Donnez-moi le document, s'il vous plaît.
+item_received_phrase: Merci.
+give_item_phrase: J'ai une livraison pour vous.
+item_delivered_phrase: Merci. Au revoir.
