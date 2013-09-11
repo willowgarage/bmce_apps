@@ -2,7 +2,7 @@
 
   <arg name="data_dir"/>
   
-  <group ns="deliver_server"/>
+  <group ns="deliver_server">
     <rosparam command="load" file="$(find bmce_apps)/cfg/deliver_params.yaml" />
   </group>
  
