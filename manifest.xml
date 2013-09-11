@@ -10,6 +10,8 @@
   <url>http://ros.org/wiki/bmce_apps</url>
   
   <depend package="joy_cmd"/>
+  <depend package="pr2_delivery"/>
+  <depend package="map_store"/>
 
 </package>
 
