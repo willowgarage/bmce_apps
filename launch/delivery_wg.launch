@@ -1,0 +1,7 @@
+<launch>
+  <!-- main delivery launch -->
+  <include file="$(find bmce_apps)/launch/delivery.launch">
+    <arg name="data_dir" value="$(find bmce_apps)/cfg/wg"/>
+  </include>
+  
+</launch>
