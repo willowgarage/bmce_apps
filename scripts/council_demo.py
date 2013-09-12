@@ -11,6 +11,8 @@ import os
 
 import pr2_delivery
 
+import time
+
 def pose_from_yaml(filename):
     stream = open( filename )
     pose_dict = yaml.load( stream )
@@ -49,6 +51,8 @@ if __name__ == '__main__':
     server = pr2_delivery.DeliverServer()
 
     server.tuck_arms()
+    
+    time.sleep(3)
     
     server.navigate_to(get_object_pose)
     server.say(server.request_item_phrase)
