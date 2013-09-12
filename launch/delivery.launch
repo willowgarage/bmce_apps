@@ -3,7 +3,7 @@
   <arg name="data_dir"/>
   
   <group ns="deliver_server">
-    <rosparam command="load" file="$(find bmce_apps)/cfg/deliver_params.yaml" />
+    <rosparam command="load" file="$(find bmce_apps)/cfg/delivery_phrases.yaml" />
   </group>
  
   <!-- main delivery launch -->
