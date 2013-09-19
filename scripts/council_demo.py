@@ -6,6 +6,10 @@ import actionlib
 import geometry_msgs.msg
 import tf.transformations
 
+from pr2_common_action_msgs.msg import TuckArmsGoal
+
+from pr2_controllers_msgs.msg import *
+
 import yaml
 import os
 
@@ -50,6 +54,15 @@ if __name__ == '__main__':
     
     server = pr2_delivery.DeliverServer()
 
+    point_head_client = actionlib.SimpleActionClient('/head_traj_controller/point_head_action', PointHeadAction)
+    point_head_client.wait_for_server()
+    
+    g = PointHeadGoal()
+    g.target.point.x = 1.0
+    g.target.point.y = 0.0
+    g.target.point.z = 0.0
+    g.min_duration = rospy.Duration(1.0)
+    
     server.tuck_arms()
     
     time.sleep(3)
@@ -66,6 +79,23 @@ if __name__ == '__main__':
     server.say(server.item_delivered_phrase)
     server.tuck_arms()
     server.navigate_to(outro_pose)
+
+    # untuck arms
+    goal = TuckArmsGoal()
+    goal.tuck_left = false
+    goal.tuck_right = false
+    server.tuck_arm_client.send_goal_and_wait(goal, rospy.Duration(30.0), rospy.Duration(5.0))
+
+    # head up
+    g.target.header.frame_id = 'head_pan_link'
+    point_head_client.send_goal(g)
+
     server.say(outro_phrase)
+
+    # head down
+    g.target.header.frame_id = 'base_link'
+    point_head_client.send_goal(g)
+
+    server.tuck_arms()
     server.navigate_to(return_home_pose)
     
