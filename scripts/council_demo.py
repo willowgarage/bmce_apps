@@ -66,7 +66,7 @@ if __name__ == '__main__':
     server.tuck_arms()
     
     time.sleep(3)
-    
+
     server.navigate_to(get_object_pose)
     server.say(server.request_item_phrase)
     server.get_object()
@@ -82,9 +82,15 @@ if __name__ == '__main__':
 
     # untuck arms
     goal = TuckArmsGoal()
-    goal.tuck_left = false
-    goal.tuck_right = false
+    goal.tuck_left = False
+    goal.tuck_right = False
     server.tuck_arm_client.send_goal_and_wait(goal, rospy.Duration(30.0), rospy.Duration(5.0))
+
+    # head down
+    g.target.header.frame_id = 'base_link'
+    point_head_client.send_goal(g)
+    
+    time.sleep(2)
 
     # head up
     g.target.header.frame_id = 'head_pan_link'
